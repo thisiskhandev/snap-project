@@ -1,27 +1,66 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".carousel");
-  var instances = M.Carousel.init(elems, {
-    indicators: true,
-  });
+console.log("test");
+
+AOS.init({
+  once: false,
+  duration: 600,
 });
 
-$(document).ready(function () {
-  $(".beforeAfter").beforeAfter({
-    movable: true,
-    clickMove: true,
-    position: 60,
-    separatorColor: "#fafafa",
-    bulletColor: "#fafafa",
+var bodySwiper = new Swiper("#swiperContent", {
+  direction: "vertical",
+  mousewheel: true,
+  slidesPerView: 1,
+  speed: 800,
+  loop: true,
+});
+var TrandingSlider = new Swiper(".coverflow2", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: "3",
+  centeredSlides: true,
+  centeredSlidesBounds: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    575: {
+      slidesPerView: 1,
+    },
+    1024: {
+      slidesPerView: 2,
+    },
+  },
+});
 
-    // onMoveStart: function (e) {
-    //   console.log(event.target);
-    // },
-    // onMoving: function () {
-    //   console.log(event.target);
-    // },
-    // onMoveEnd: function () {
-    //   console.log(event.target);
-    // },
+document.addEventListener("DOMContentLoaded", function () {});
+
+$(document).ready(function () {
+  $(".js-img-compare").imagesCompare({
+    // visible ratio of front element on init
+    initVisibleRatio: 0.5,
+    // "drag", "mousemove", "click"
+    interactionMode: "drag",
+    // default animation duration in ms
+    animationDuration: 400,
+    animationEasing: "swing",
+    // add a html element on the separation
+    addSeparator: true,
+    // add a html drag handle element on the separation
+    addDragHandle: true,
+    // ratio precision, numbers after the decimal point
+    precision: 4,
   });
 
   $(".slick_the_slides").slick({

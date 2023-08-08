@@ -76,42 +76,66 @@ textarea {
   height: 100vh;
 }
 
-swiper-container.bodySwiper {
+#swiperContent.swiper-container {
   width: 100%;
   height: 100%;
+  & > .swiper-wrapper .swiper-slide {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
-swiper-container.bodySwiper > swiper-slide {
+#heroComparison .images-compare-container {
+  min-height: 100vh;
+  & .images-compare-before,
+  .images-compare-after {
+    height: 100vh !important;
+  }
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.sub_title {
   text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh !important;
-  max-width: 100%;
+  color: var(--color-primary);
+  font-size: 24px;
+  font-family: var(--font-text);
+  font-weight: 500;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
 }
 
-swiper-container.bodySwiper > swiper-slide img:not(.slick_the_slides swiper-slide img) {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+h2.title {
+  text-align: center;
+  font-size: 68px;
 }
 
-.beforeAfter {
-  height: 100%;
-}
-
-.home_3_fold > main {
+#swiperContent .swiper-slide[data-swiper-slide-index="1"] {
   background-image: url(https://modernyze.pulsenative.com/wp-content/uploads/2023/05/Mask-Group-2.png);
-  background-position: top center;
-  background-attachment: fixed;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  & .container-fluid:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
-.home_3_fold > main > section {
-  background-color: rgba(74, 74, 74, 0.8);
+.msg_from_owner > section:first-child {
+  margin-bottom: 200px;
 }
 
 .slick_the_slides img {
@@ -122,5 +146,16 @@ swiper-container.bodySwiper > swiper-slide img:not(.slick_the_slides swiper-slid
   .flex_center {
     display: flex;
     align-items: center;
+  }
+}
+
+/* ------------------ DEBUGGING */
+
+.what_we_do_sec {
+  & .swiper-container {
+    max-width: 750px;
+  }
+  & .swiper-slide {
+    width: 300px;
   }
 }
