@@ -1,5 +1,3 @@
 # snap-project
  
-Modernyze 
-  
- 
+Modernyze
