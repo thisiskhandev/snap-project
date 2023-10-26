@@ -1,6 +1,3 @@
 # snap-project
  
 MODERNYZE
-
-
- 
